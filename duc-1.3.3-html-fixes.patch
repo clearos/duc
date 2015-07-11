@@ -1,0 +1,11 @@
+diff -rup duc-1.3.3/src/duc/cmd-cgi.c duc-1.3.3-html-fixes/src/duc/cmd-cgi.c
+--- duc-1.3.3/src/duc/cmd-cgi.c	2015-06-22 14:35:07.410366583 -0400
++++ duc-1.3.3-html-fixes/src/duc/cmd-cgi.c	2015-06-22 14:55:56.148523242 -0400
+@@ -354,6 +354,7 @@ static void do_index(duc *duc, duc_graph
+ 	}
+ 
+ 	printf("</div>\n");
++	printf("</div>\n");
+ 
+ 	if(opt_tooltip) {
+ 		printf("<div id=\"tooltip\"></div>\n");
