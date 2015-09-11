@@ -1,6 +1,6 @@
 Name:           duc
 Version:        1.3.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Duc, a library and suite of tools for inspecting disk usage
 Group:		Applications/System
 License:        GNU General Public License
@@ -8,6 +8,7 @@ URL:            https://github.com/zevv/duc
 Source0:        %{name}-%{version}.tar.gz
 Patch1:		duc-1.3.3-html-fixes.patch
 Patch2:		duc-1.3.3-no-header.patch
+Patch3:     duc-1.3.3-no-css.patch
 BuildArch:      x86_64
 BuildRequires:  libtool autoconf
 BuildRequires:  pango-devel cairo-devel tokyocabinet-devel
@@ -25,6 +26,7 @@ or create fancy graphs showing you where your bytes are.
 %setup -q
 %patch1 -p1 -b htmlfixes
 %patch2 -p1 -b noheader
+%patch3 -p1 -b noheader
 
 %build
 autoreconf --install
@@ -44,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}
 
 %changelog
+* Thu Sep 10 2015 ClearFoundation <developer@clearfoundation.com> - 1.3.3-3
+- Added no CSS patch
+
 * Mon Jun 22 2015 ClearFoundation <developer@clearfoundation.com> - 1.3.3-2
 - Added patch for HTML cleanup
 - Added no-header patch for wrapping CGI inside ClearOS webconfig
